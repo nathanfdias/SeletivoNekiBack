@@ -9,6 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import lombok.Data;
@@ -26,7 +27,7 @@ public class UserSkill {
     @JoinColumn( name = "user_id")
     private User user;
 
-    @ManyToOne
+    @OneToOne
     @JoinColumn( name = "skill_id")
     private Skill skill;
 

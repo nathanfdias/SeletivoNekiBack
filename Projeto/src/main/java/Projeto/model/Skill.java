@@ -7,7 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import lombok.Data;
@@ -33,7 +33,7 @@ public class Skill {
     @Column(name = "image_url")
     private String image_url;
 
-    @OneToMany ( mappedBy = "skill")
-    private List<UserSkill> userSkill;
+    @OneToOne ( mappedBy = "skill")
+    private UserSkill userSkill;
 }
 
