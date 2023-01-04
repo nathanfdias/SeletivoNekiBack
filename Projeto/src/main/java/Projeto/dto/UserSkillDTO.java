@@ -2,8 +2,6 @@ package Projeto.dto;
 
 import java.util.Date;
 
-import Projeto.model.Skill;
-import Projeto.model.User;
 import Projeto.model.UserSkill;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -16,9 +14,9 @@ public class UserSkillDTO {
     
     private Long id;
     
-    private User user;
+    // private UserDTO user;
 
-    private Skill skill;
+    // private SkillDTO skill;
 
     private Integer knowledgeLevel;
 
@@ -31,7 +29,7 @@ public class UserSkillDTO {
         this.knowledgeLevel = userSkill.getKnowledgeLevel();
         this.createdAt = userSkill.getCreatedAt();
         this.updatedAt = userSkill.getUpdatedAt();
-        // this.user = new User(userSkill.getUser());
-        // this.skill = new Skill(userSkill.getSkill());
+        // this.user = new UserDTO(userSkill.getUser());
+        // this.skill = new SkillDTO(userSkill.getSkill());
     }
 }
