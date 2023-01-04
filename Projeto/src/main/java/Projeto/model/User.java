@@ -17,8 +17,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-// import lombok.Data;
-
 @Getter
 @Setter
 @NoArgsConstructor
@@ -33,7 +31,7 @@ public class User {
     private Integer id;
 
     @Column( name = "login" )
-    private String login;
+    private String username;
 
     @Column( name = "password")
     private String password;
