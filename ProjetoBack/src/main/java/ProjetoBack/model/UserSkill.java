@@ -38,6 +38,5 @@ public class UserSkill {
 
     @Column( name = "updated_at")
     private Date updatedAt;
-
     
 }

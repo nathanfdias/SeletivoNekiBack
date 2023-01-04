@@ -1,0 +1,14 @@
+{
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Spring Boot-ProjetoBackApplication<ProjetoBack>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "mainClass": "ProjetoBack.ProjetoBackApplication",
+      "projectName": "ProjetoBack",
+      "args": "",
+      "envFile": "${workspaceFolder}/.env"
+    }
+  ]
+}
