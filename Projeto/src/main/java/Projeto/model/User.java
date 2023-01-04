@@ -12,17 +12,25 @@ import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 // import lombok.Data;
 
-
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "user")
 public class User {
     
     @Id
     @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="user_sequence")
-    @SequenceGenerator(name="user_sequence", sequenceName="user_seq")
-    private Long id;
+    @SequenceGenerator(name="user_sequence", sequenceName="user_seq", allocationSize = 1)
+    private Integer id;
 
     @Column( name = "login" )
     private String login;
@@ -35,44 +43,4 @@ public class User {
 
     @OneToMany ( mappedBy = "user")
     private List<UserSkill> userSkill;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public void setLogin(String login) {
-        this.login = login;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public void setLastLoginDate(LocalDate lastLoginDate) {
-        this.lastLoginDate = lastLoginDate;
-    }
-
-    public void setUserSkill(List<UserSkill> userSkill) {
-        this.userSkill = userSkill;
-    }
-
-    public String getLogin() {
-        return login;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public LocalDate getLastLoginDate() {
-        return lastLoginDate;
-    }
-
-    public List<UserSkill> getUserSkill() {
-        return userSkill;
-    }
 }
