@@ -1,4 +1,4 @@
-package ProjetoBack.model;
+package Projeto.model;
 
 import java.util.Date;
 
@@ -40,3 +40,4 @@ public class UserSkill {
     private Date updatedAt;
     
 }
+

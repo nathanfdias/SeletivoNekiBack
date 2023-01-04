@@ -1,5 +1,4 @@
-package ProjetoBack.exceptions;
-
+package Projeto.exceptions;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -21,3 +20,4 @@ public class ErroResposta {
     private List<String> erros;
     
 }
+

@@ -1,4 +1,4 @@
-package ProjetoBack.model;
+package Projeto.model;
 
 import java.util.List;
 
@@ -36,3 +36,4 @@ public class Skill {
     @OneToMany ( mappedBy = "skill")
     private List<UserSkill> userSkill;
 }
+

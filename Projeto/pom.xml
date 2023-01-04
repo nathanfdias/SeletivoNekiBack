@@ -8,11 +8,11 @@
 		<version>2.7.7</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>neki</groupId>
-	<artifactId>ProjetoBack</artifactId>
+	<groupId>projeto.neki</groupId>
+	<artifactId>Projeto</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>ProjetoBack</name>
-	<description>Projeto Back End Neki</description>
+	<name>Projeto</name>
+	<description>Projeto BackEnd</description>
 	<properties>
 		<java.version>11</java.version>
 	</properties>
@@ -24,6 +24,10 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-validation</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -50,10 +54,6 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-validation</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.security</groupId>

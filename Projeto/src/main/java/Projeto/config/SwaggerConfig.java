@@ -1,4 +1,4 @@
-package ProjetoBack.config;
+package Projeto.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
