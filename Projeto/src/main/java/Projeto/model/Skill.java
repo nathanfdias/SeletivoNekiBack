@@ -6,6 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 import lombok.Data;
@@ -15,9 +16,9 @@ import lombok.Data;
 @Table(name = "skill")
 public class Skill {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
-    private Long id;
+    @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="skill_sequence")
+    @SequenceGenerator(name="skill_sequence", sequenceName="skill_seq", allocationSize = 1)
+    private Integer id;
 
     @Column(name = "name")
     private String name;
