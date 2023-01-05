@@ -27,7 +27,7 @@ public class UserSkill {
     @JoinColumn( name = "user_id")
     private User user;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn( name = "skill_id")
     private Skill skill;
 

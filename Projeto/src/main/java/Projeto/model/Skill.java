@@ -1,12 +1,13 @@
 package Projeto.model;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -33,7 +34,7 @@ public class Skill {
     @Column(name = "image_url")
     private String image_url;
 
-    @OneToOne ( mappedBy = "skill")
-    private UserSkill userSkill;
+    @OneToMany ( mappedBy = "skill")
+    private List<UserSkill> userSkill;
 }
 

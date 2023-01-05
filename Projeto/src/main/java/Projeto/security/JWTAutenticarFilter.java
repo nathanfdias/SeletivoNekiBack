@@ -26,7 +26,7 @@ import Projeto.model.User;
 
     public class JWTAutenticarFilter extends UsernamePasswordAuthenticationFilter {
 
-    public static final int TOKEN_EXPIRACAO = 1800000;
+    public static final int TOKEN_EXPIRACAO = 3600000;
 
     public static final String TOKEN_SENHA = "b7af8249-3550-4a62-93c5-0b5620ef4888";
 
@@ -73,9 +73,9 @@ import Projeto.model.User;
       logger.debug("failed authentication while attempting to access "
           + urlPathHelper.getPathWithinApplication((HttpServletRequest) request));
 
+      response.setStatus(401);
       response.getWriter().write("Authentication Failed");
       response.getWriter().flush();
-
     }
 
 }
