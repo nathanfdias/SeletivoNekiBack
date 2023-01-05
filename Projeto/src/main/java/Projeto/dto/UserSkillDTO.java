@@ -14,9 +14,9 @@ public class UserSkillDTO {
     
     private Long id;
     
-    // private UserDTO user;
+    private UserDTO user;
 
-    // private SkillDTO skill;
+    private SkillDTO skill;
 
     private Integer knowledgeLevel;
 
@@ -29,7 +29,7 @@ public class UserSkillDTO {
         this.knowledgeLevel = userSkill.getKnowledgeLevel();
         this.createdAt = userSkill.getCreatedAt();
         this.updatedAt = userSkill.getUpdatedAt();
-        // this.user = new UserDTO(userSkill.getUser());
-        // this.skill = new SkillDTO(userSkill.getSkill());
+        this.user = new UserDTO(userSkill.getUser());
+        this.skill = new SkillDTO(userSkill.getSkill());
     }
 }
