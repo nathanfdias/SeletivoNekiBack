@@ -1,5 +1,6 @@
 package Projeto.service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -30,8 +31,14 @@ public class UserService {
         return user;
     }
 
-    public List<User> findAll(){
-        return userRepository.findAll();
+    public List<UserDTO> findAll(){
+        List<User> users = userRepository.findAll();
+        List<UserDTO> userDTO = new ArrayList<>();
+
+        for (User user : users) {
+            userDTO.add(new UserDTO(user));
+        }
+        return userDTO;
     }
 
     public UserDTO atualizar(Integer id, User user){

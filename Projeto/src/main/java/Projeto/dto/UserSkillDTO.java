@@ -2,8 +2,6 @@ package Projeto.dto;
 
 import java.util.Date;
 
-import Projeto.model.Skill;
-import Projeto.model.User;
 import Projeto.model.UserSkill;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -15,19 +13,18 @@ import lombok.Setter;
 public class UserSkillDTO {
 
   private Integer id;
-  private User user;
-  private Skill skill;
+  private UserDTO user;
+  private SkillDTO skill;
   private Integer knowledgeLevel;
   private Date createdAt;
   private Date updatedAt;
 
   public UserSkillDTO(UserSkill userSkill) {
     this.id = userSkill.getId();
-    this.user = userSkill.getUser();
-    this.skill = userSkill.getSkill();
+    this.user = new UserDTO(userSkill.getUser());
+    this.skill = new SkillDTO(userSkill.getSkill());
     this.knowledgeLevel = userSkill.getKnowledgeLevel();
-    this.createdAt = userSkill.getCreatedAt();
-    this.updatedAt = userSkill.getUpdatedAt();
+
   }
 
 }

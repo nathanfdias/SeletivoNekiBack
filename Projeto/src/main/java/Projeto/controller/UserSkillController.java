@@ -36,7 +36,7 @@ public class UserSkillController {
   }
 
   @GetMapping
-  public ResponseEntity<List<UserSkill>> listar() {
+  public ResponseEntity<List<UserSkillDTO>> listar() {
     return ResponseEntity.ok(userSkillService.findAll());
   }
 

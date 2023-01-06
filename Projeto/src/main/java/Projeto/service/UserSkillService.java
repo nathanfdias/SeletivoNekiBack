@@ -1,5 +1,6 @@
 package Projeto.service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -41,9 +42,16 @@ public class UserSkillService {
 
     }
 
-    public List<UserSkill> findAll() {
-        return userSkillRepository.findAll();
+    public List<UserSkillDTO> findAll() {
+        List<UserSkill> user = userSkillRepository.findAll();
+        List<UserSkillDTO> skillDTO = new ArrayList<>();
+
+        for (UserSkill users : user) {
+            skillDTO.add(new UserSkillDTO(users));
+        }
+        return skillDTO;
     }
+
 
     public UserSkillDTO atualizar(Integer id, UserSkill userSkill) {
         userSkill.setId(id);
