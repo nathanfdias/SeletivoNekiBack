@@ -20,6 +20,7 @@ public class Skill {
     @Id
     @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="skill_sequence")
     @SequenceGenerator(name="skill_sequence", sequenceName="skill_seq", allocationSize = 1)
+    @Column(name = "skill_id")
     private Integer id;
 
     @Column(name = "name")
