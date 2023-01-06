@@ -37,8 +37,9 @@ public class SkillController {
     }
 
     @GetMapping
-    public ResponseEntity<List<Skill>> listar(){
-        return ResponseEntity.ok(skillService.findAll());
+    public ResponseEntity<List<SkillDTO>> listar() {
+        return new ResponseEntity<>(skillService.findAll(),
+                HttpStatus.OK);
     }
 
     @PutMapping("{id}")
