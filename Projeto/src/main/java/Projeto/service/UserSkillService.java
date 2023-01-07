@@ -1,9 +1,11 @@
 package Projeto.service;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
+import org.hibernate.service.spi.OptionallyManageable;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -37,6 +39,8 @@ public class UserSkillService {
         userSkill.setKnowledgeLevel(u.getKnowledgeLevel());
         userSkill.setUser(user);
         userSkill.setSkill(skill);
+        userSkill.setCreatedAt(new Date());
+        userSkill.setUpdatedAt(new Date());
 
         return userSkillRepository.save(userSkill);
 
@@ -56,11 +60,14 @@ public class UserSkillService {
     public UserSkillDTO atualizar(Integer id, UserSkill userSkill) {
         userSkill.setId(id);
         UserSkill newUser = new UserSkill();
+        Optional<UserSkill> userSkillS = userSkillRepository.findById(id);
 
         newUser.setId(userSkill.getId());
         newUser.setKnowledgeLevel(userSkill.getKnowledgeLevel());
         newUser.setSkill(userSkill.getSkill());
         newUser.setUser(userSkill.getUser());
+        newUser.setCreatedAt(userSkillS.get().getCreatedAt());
+        newUser.setUpdatedAt(new Date());
 
         userSkillRepository.save(newUser);
 

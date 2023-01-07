@@ -24,7 +24,5 @@ public class UserSkillDTO {
     this.user = new UserDTO(userSkill.getUser());
     this.skill = new SkillDTO(userSkill.getSkill());
     this.knowledgeLevel = userSkill.getKnowledgeLevel();
-
   }
-
 }
