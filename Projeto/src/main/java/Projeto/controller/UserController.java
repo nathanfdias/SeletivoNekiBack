@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import Projeto.dto.UserDTO;
+import Projeto.dto.UserResponseDTO;
 import Projeto.model.User;
 import Projeto.service.UserService;
 
@@ -37,8 +38,13 @@ public class UserController {
     }
 
     @GetMapping
-    public ResponseEntity<List<UserDTO>> listar(){
+    public ResponseEntity<List<UserResponseDTO>> listar(){
         return ResponseEntity.ok(userService.findAll());
+    }
+
+    @GetMapping("{id}")
+    public ResponseEntity<UserResponseDTO> findById(@PathVariable Integer id){
+        return ResponseEntity.ok(userService.findById(id));
     }
 
     @PutMapping("{id}")

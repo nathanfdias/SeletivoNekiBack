@@ -5,11 +5,11 @@ import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
-import org.hibernate.service.spi.OptionallyManageable;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import Projeto.dto.UserSkillDTO;
+import Projeto.exceptions.SkillException;
 import Projeto.model.Skill;
 import Projeto.model.User;
 import Projeto.model.UserSkill;
@@ -30,6 +30,15 @@ public class UserSkillService {
     private UserRepository userRepository;
 
     public UserSkill cadastrarUserSkill(UserSkill u) {
+
+        Optional<User> userInsert = userRepository.findById(u.getUser().getId());
+
+        List<UserSkill> skills = userInsert.get().getUserSkill();
+        for (UserSkill userSkill : skills) {
+          if(userSkill.getSkill().getId() == u.getSkill().getId()) {
+            throw new SkillException("Skill já cadastrada");
+          }
+        }
 
         UserSkill userSkill = new UserSkill();
         User user = userRepository.getReferenceById(u.getUser().getId());

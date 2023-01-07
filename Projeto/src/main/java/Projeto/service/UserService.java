@@ -9,6 +9,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import Projeto.dto.UserDTO;
+import Projeto.dto.UserResponseDTO;
 import Projeto.model.User;
 import Projeto.repository.UserRepository;
 
@@ -31,14 +32,20 @@ public class UserService {
         return user;
     }
 
-    public List<UserDTO> findAll(){
+    public List<UserResponseDTO> findAll(){
         List<User> users = userRepository.findAll();
-        List<UserDTO> userDTO = new ArrayList<>();
+        List<UserResponseDTO> userDTO = new ArrayList<>();
 
         for (User user : users) {
-            userDTO.add(new UserDTO(user));
+            userDTO.add(new UserResponseDTO(user));
         }
         return userDTO;
+    }
+
+    public UserResponseDTO findById(Integer id){
+        Optional<User> users = userRepository.findById(id);
+
+        return new UserResponseDTO(users.get());
     }
 
     public UserDTO atualizar(Integer id, User user){

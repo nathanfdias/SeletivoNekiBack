@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import Projeto.dto.UserSkillDTO;
+import Projeto.exceptions.SkillException;
 import Projeto.model.UserSkill;
 import Projeto.service.UserSkillService;
 
@@ -30,9 +31,16 @@ public class UserSkillController {
 
   @PostMapping("/cadastrar")
   public ResponseEntity<Object> cadastrar(@Valid @RequestBody UserSkill userSkill) {
-    userSkillService.cadastrarUserSkill(userSkill);
-    URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(userSkill.getId()).toUri();
-    return ResponseEntity.created(uri).body(userSkill);
+
+    try{
+        userSkillService.cadastrarUserSkill(userSkill);
+        URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(userSkill.getId()).toUri();
+        return ResponseEntity.created(uri).body(userSkill);
+
+    } catch (SkillException e) {
+        return ResponseEntity.unprocessableEntity().body(e.getMessage());
+    }
+
   }
 
   @GetMapping
