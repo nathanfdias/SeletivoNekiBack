@@ -1,8 +1,8 @@
 # Processo Seletivo Neki
 React project consuming API
 
-* [FrontEnd Repository](https://github.com/nathanfdias/SeletivoNekiBack/) 
-* [BackEnd Repository](https://github.com/nathanfdias/SeletivoNekiFront/) 
+* [FrontEnd Repository](https://github.com/nathanfdias/SeletivoNekiFront/) 
+* [BackEnd Repository](https://github.com/nathanfdias/SeletivoNekiBack/) 
 
 ![Badge em Desenvolvimento](https://img.shields.io/static/v1?label=STATUS&message=FINALIZADO&color=GREEN&style=for-the-badge)
  
